@@ -1,0 +1,59 @@
+body{
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  background-color: #0765CD;
+}
+
+.home{
+  position: absolute;
+  width: 42px;
+  height: 53px;
+  left: 45px;
+  top: 31px;
+  border: 11px solid #FFFFFF;
+  box-sizing: border-box;
+}
+
+.home:hover{
+  border: 11px solid #757575;
+}
+
+.category {
+  position: absolute;
+  width: 63px;
+  height: 25px;
+  left: 1342px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  top: 32px;
+  letter-spacing: 0.17em;
+  color: #FFFFFF;
+}
+
+.Name{
+  position: absolute;
+  width: 171px;
+  height: 26px;
+  left: -15px;
+  top: 400px;
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: 0.5px;
+  line-height: 36px;
+  color: #FFFFFF;
+  transform: rotate(-90deg);
+}
+
+.Name:hover{
+  text-decoration: underline;
+}
+
+button{
+  position: absolute;
+  width: 226px;
+  height: 38px;
+  left: 1166px;
+  top: 706px;
+  background: #FFFFFF;
+  border-radius: 32px;
+}
