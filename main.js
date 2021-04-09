@@ -25,7 +25,11 @@ function gotAllTags(err){
   }
 
   consoleLogTags();
-  showTags();
+  try {
+    showTags();
+  } catch(err) {
+    console.error(err);
+  }
 }
 
 function consoleLogTags(){
@@ -44,16 +48,18 @@ function showTags() {
     div.innerText = tag.fields.Name;
     div.classList.add("grid-item");
     div.addEventListener("mouseover", () => {
-      let tagImage = document.createElement("img");
-      tagImage.src = tag.fields.image[0].url;
-      gridcontainer.appendChild(tagImage);
+      div.style.backgroundImage = `url(${tag.fields.image[0].url})`;
+      // let tagImage = document.createElement("img");
+      // tagImage.src = tag.fields.image[0].url;
+      // gridcontainer.appendChild(tagImage);
       //div.src = tag.fields.image[0].url;
     });
     div.addEventListener("mouseout", () => {
-      div.innerText = tag.fields.Name;
+      div.style.backgroundImage = ``;
+      // div.innerText = tag.fields.Name;
     });
     div.addEventListener("click", () => {
-      document.location.href = 'tag.html';
+      document.location.href = 'tag.html?id=' + tag.id;
     })
     gridcontainer.appendChild(div);
 
