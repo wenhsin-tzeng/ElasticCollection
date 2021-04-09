@@ -37,6 +37,7 @@ function consoleLogTags(){
 
 function showTags() {
   console.log("showTags()");
+
   const gridcontainer = document.getElementById("grid-container");
   tags.forEach((tag) => {
     const div = document.createElement("div");
@@ -45,7 +46,8 @@ function showTags() {
     div.addEventListener("mouseover", () => {
       let tagImage = document.createElement("img");
       tagImage.src = tag.fields.image[0].url;
-      document.querySelector("grid-container").append(tagImage);
+      gridcontainer.appendChild(tagImage);
+      //div.src = tag.fields.image[0].url;
     });
     div.addEventListener("mouseout", () => {
       div.innerText = tag.fields.Name;
@@ -60,9 +62,9 @@ function showTags() {
     // const h2 = document.createElement("h2");
     // h2.innerText = tag.fields.Name;
     // document.body.appendChild(h2);
-
   });
 }
+
 /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
 function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
