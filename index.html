@@ -8,11 +8,22 @@
     <title>TAGS</title>
   </head>
   <body>
-    <a href="tag.html"><div class="home"></div></a>
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">ALL</a>
+      <a href="#">LOGO</a>
+      <a href="#">QUOTES</a>
+      <a href="#">IRREGULAR</a>
+    </div>
+    <div id="main">
+      <button class="home" onclick="openNav()"></button>
+    </div>
+
     <div class="box">
       <h1>TAGS</h1>
       <nav id="grid-container" class="grid-container"></nav>
-      <article class=""></article>
+      
+      <!-- <article class=""></article> -->
     </div>
     <script src="airtable.browser.js"></script>
     <script src="main.js" charset="utf-8"></script>

@@ -43,11 +43,16 @@ function showTags() {
     div.innerText = tag.fields.Name;
     div.classList.add("grid-item");
     div.addEventListener("mouseover", () => {
-      div.innerText = tag.fields.Category;
+      let tagImage = document.createElement("img");
+      tagImage.src = tag.fields.image[0].url;
+      document.querySelector("grid-container").append(tagImage);
     });
     div.addEventListener("mouseout", () => {
       div.innerText = tag.fields.Name;
     });
+    div.addEventListener("click", () => {
+      document.location.href = 'tag.html';
+    })
     gridcontainer.appendChild(div);
 
     // div.getElementByClassName("grid-item")[0].src = tag.fields.image[0].url;
@@ -57,4 +62,15 @@ function showTags() {
     // document.body.appendChild(h2);
 
   });
+}
+/* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
 }
