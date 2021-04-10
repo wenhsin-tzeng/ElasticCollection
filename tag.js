@@ -3,15 +3,11 @@ console.log(Airtable);
 
 var base = new Airtable({apiKey: 'key3HvxrMD4oBsB4C'}).base('applOVw32gRipkREK');
 
-base('Tags').select({
-  maxRecords: 1,
-  view:"Grid view"
-}).eachPage(gotPageOfTags, gotAllTags);
+var url = new URL(window.location.href);
+var id = url.searchParams.get("id");
+console.log(id);
 
-const tags = [];
-
-function gotPageOfTags(records, fetchNextPage){
-  console.log("gotPageOfTags()");
-  tags.push(...records);
-  fetchNextPage();
-}
+base('Tags').find(id, function(err, record) {
+  if (err) { console.error(err); return; }
+  console.log('Retrieved', record);
+});

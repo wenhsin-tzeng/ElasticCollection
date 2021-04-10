@@ -31,6 +31,8 @@ body{
 }
 
 .grid-item{
+  background-size: cover;
+  background-repeat: no-repeat;
   border: 15px solid blue;
 }
 
