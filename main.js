@@ -25,13 +25,11 @@ function gotAllTags(err){
   }
 
   consoleLogTags();
-  showTags();
   try {
     showTags();
   } catch(err) {
     console.error(err);
   }
-
 }
 
 function consoleLogTags(){
