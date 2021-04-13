@@ -46,8 +46,29 @@ body{
   text-transform: capitalize;
 }
 
-.caption:hover{
-  text-decoration: underline;
+.caption-move{
+  animation-name: rotate;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+}
+
+@keyframes rotate {
+
+  0% {
+    transform: rotate(-90deg);
+  }
+  50% {
+    transform: rotate(0deg);
+    left: 200px;
+    font-size: 50px;
+    line-height: 56px;
+  }
+  100% {
+    transform: rotate(0deg);
+    left: 200px;
+    font-size: 50px;
+    line-height: 54px;
+  }
 }
 
 .tag-image{
@@ -59,6 +80,41 @@ body{
   box-shadow: 0px 12px 17px 3px rgba(0, 0, 0, 0.25);
   background-size: cover;
   background-repeat: no-repeat;
+  animation-name: image-move;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes image-move {
+  0% {
+    left: -50px;
+  }
+  100% {
+    left: 559px;
+  }
+}
+
+.url-style {
+  position: absolute;
+  top: 720px;
+  left: 70px;
+  color: blue;
+}
+
+.url-style:hover {
+  position: absolute;
+  top: 720px;
+  left: 70px;
+  color: blue;
+  text-decoration: underline;
+}
+
+.url-style:active {
+  position: absolute;
+  top: 720px;
+  left: 70px;
+  color: red;
+  text-decoration: underline;
 }
 
 button{

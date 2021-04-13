@@ -20,6 +20,16 @@ base('Tags').find(id, function(err, record) {
     console.log("Tag name:", tagName);
     tagName.classList.add("caption");
 
+    tagName.addEventListener("mouseover", () => {
+      tagName.style.color = "yellow";
+    })
+    tagName.addEventListener("click", () => {
+      tagName.classList.add("caption-move");
+    })
+    tagName.addEventListener("mouseout", () => {
+      tagName.style.color = "black";
+    })
+
     let tagType =  document.createElement("div");
     tagType.innerHTML = record.fields.type[0];
     document.body.append(tagType);
@@ -32,6 +42,15 @@ base('Tags').find(id, function(err, record) {
     console.log("Tag Image:", tagImage);
     tagImage.classList.add("tag-image");
 
+    let brandurl = document.createElement("div");
+    brandurl.innerHTML = record.fields.URL;
+    document.body.append(brandurl);
+    console.log("Brand website:", brandurl);
+    brandurl.classList.add("url-style");
+
+    brandurl.addEventListener("click", () => {
+      document.location.href = record.fields.URL;
+    })
 
   // let tagName = record.fields.Name;
   // console.log("Tag name:", tagName);
