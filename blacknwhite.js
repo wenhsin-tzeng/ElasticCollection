@@ -5,7 +5,9 @@ console.log(Airtable);
 
 var base = new Airtable({apiKey: 'key3HvxrMD4oBsB4C'}).base('applOVw32gRipkREK');
 
-base('Tags').select({}).eachPage(gotPageOfTags, gotAllTags);
+base('Tags').select({
+  view: "black_white"
+}).eachPage(gotPageOfTags, gotAllTags);
 
 const tags = [];
 
@@ -78,88 +80,9 @@ function showTags() {
 
     div.addEventListener("mouseover", () => {
         div.style.backgroundImage = `url(${tag.fields.image[0].url})`;
-        var tagColor = tag.fields.color;
-        tagColor.forEach(function(color) {
-          div.classList.add(color)
-        })
-          if (div.classList.contains("blue")) {
-            div.style.borderColor = "blue";
-            div.style.color = "blue";
-          }
-          if (div.classList.contains("purple")) {
-            div.style.borderColor = "purple";
-            div.style.color = "purple";
-          }
-          if (div.classList.contains("green")) {
-            div.style.borderColor = "green";
-            div.style.color = "green";
-          }
-          if (div.classList.contains("red")) {
-            div.style.borderColor = "red";
-
-          }
-          if (div.classList.contains("yellow")) {
-            div.style.borderColor = "yellow";
-
-          }
-          if (div.classList.contains("orange")) {
-            div.style.borderColor = "orange";
-
-          }
-          if (div.classList.contains("grey")) {
-            div.style.borderColor = "grey";
-
-          }
-          if (div.classList.contains("pink")) {
-            div.style.borderColor = "pink";
-
-          }
-          if (div.classList.contains("black")) {
-            div.style.borderColor = "black";
-
-          }
-          div.style.color = "transparent";
     });
     div.addEventListener("mouseout", () => {
       div.style.backgroundImage = ``;
-      if (div.classList.contains("blue")) {
-        div.style.borderColor = "blue";
-
-      }
-      if (div.classList.contains("purple")) {
-        div.style.borderColor = "purple";
-
-      }
-      if (div.classList.contains("green")) {
-        div.style.borderColor = "green";
-
-      }
-      if (div.classList.contains("red")) {
-        div.style.borderColor = "red";
-
-      }
-      if (div.classList.contains("yellow")) {
-        div.style.borderColor = "yellow";
-
-      }
-      if (div.classList.contains("orange")) {
-        div.style.borderColor = "orange";
-
-      }
-      if (div.classList.contains("grey")) {
-        div.style.borderColor = "grey";
-
-      }
-      if (div.classList.contains("pink")) {
-        div.style.borderColor = "pink";
-
-      }
-      if (div.classList.contains("black")) {
-        div.style.borderColor = "black";
-
-      }
-      div.classList.add("stay-animation");
-
     });
     div.addEventListener("click", () => {
       document.location.href = 'tag.html?id=' + tag.id;
