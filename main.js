@@ -39,6 +39,7 @@ function consoleLogTags(){
   });
 }
 
+
 function showTags() {
   console.log("showTags()");
 
@@ -48,32 +49,12 @@ function showTags() {
     div.innerText = tag.fields.Name;
     div.classList.add("grid-item");
 
-    // var tagColor = tag.fields.color;
-    // tagColor.forEach(function(color) {
-    //   div.classList.add(color)
-    // })
-    //   if (div.classList.contains("blue")) {
-    //     div.style.borderColor = "blue";
-    //   }
-    //   if (div.classList.contains("purple")) {
-    //     div.style.borderColor = "purple";
-    //   }
-    //   if (div.classList.contains("green")) {
-    //     div.style.borderColor = "green";
-    //   }
-    //   if (div.classList.contains("red")) {
-    //     div.style.borderColor = "red";
-    //   }
-    //   if (div.classList.contains("yellow")) {
-    //     div.style.borderColor = "yellow";
-    //   }
-    //   if (div.classList.contains("orange")) {
-    //     div.style.borderColor = "orange";
-    //   }
-    //   if (div.classList.contains("grey")) {
-    //     div.style.borderColor = "grey";
-    //   }
-
+    // var width = window.innerWidth;
+    // if (width <= 400) {
+    //
+    // } else {
+    //
+    // }
 
 
     div.addEventListener("mouseover", () => {

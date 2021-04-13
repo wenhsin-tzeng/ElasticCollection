@@ -41,6 +41,8 @@ p{
   margin: 20px;
   font-size: 30px;
   padding-bottom: 100px;
+  padding-right: 100px;
+  padding-left: 100px;
 }
 
 .grid-item{
@@ -124,7 +126,56 @@ p{
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
+@media only screen and (max-width: 400px) {
+  body{
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+    margin: 0px 0px 100px 0px;
+  }
+  .box{
+    margin: -10px 13px 0px 13px;
+  }
+  h1{
+    margin: 10px;
+    letter-spacing: 1px;
+  }
+  .home{
+    position: absolute;
+    width: 27px;
+    height: 34px;
+    left: 13px;
+    top: 13px;
+    border: 5px solid #DD4747;
+  }
+  .home:hover{
+    border: 5px solid #757575;
+  }
+  .grid-container{
+    grid-template-columns: auto auto;
+    margin: 0;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 30px;
+    grid-gap: 11px;
+    font-size: 12px;
+  }
+  .grid-item{
+    border: 8px solid black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: white;
+  }
+  p{
+    font-size: 15px;
+    text-transform: uppercase;
+    word-spacing: 10px;
+    padding-bottom: 20px;
+    color: lightgray;
+    margin: 0 20px 0 20px;
+  }
+  /* .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;} */
 }
