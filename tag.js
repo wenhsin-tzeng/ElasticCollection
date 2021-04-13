@@ -3,15 +3,26 @@ console.log(Airtable);
 
 var base = new Airtable({apiKey: 'key3HvxrMD4oBsB4C'}).base('applOVw32gRipkREK');
 
-base('Tags').select({
-  maxRecords: 1,
-  view:"Grid view"
-}).eachPage(gotPageOfTags, gotAllTags);
+var url = new URL(window.location.href);
+var id = url.searchParams.get("id");
+console.log(id);
 
-const tags = [];
+base('Tags').find(id, function(err, record) {
+  if (err) { console.error(err); return; }
+  console.log('Retrieved', record);
+  //
+  // var tagName = document.createElement("div");
+  // tagName.innertext =
+  // document.querySelector(".Name").append(tagName);
+  showInfo();
+});
 
-function gotPageOfTags(records, fetchNextPage){
-  console.log("gotPageOfTags()");
-  tags.push(...records);
-  fetchNextPage();
+function showInfo(){
+  const tags = [];
+  tags.forEach((tag) => {
+    var tagName = document.createElement("div");
+    tagName.innertext = tag.fields.Name;
+    document.querySelector(".Name").append(tagName);
+  });
+  console.log("showInfo()");
 }

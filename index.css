@@ -26,12 +26,18 @@ body{
 .grid-container{
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: auto auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto;
   margin: 20px;
+  color: white;
+  font-size: 12px;
 }
 
 .grid-item{
-  border: 15px solid blue;
+  border: 15px solid white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .sidebar {
