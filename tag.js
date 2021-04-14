@@ -17,7 +17,7 @@ base('Tags').find(id, function(err, record) {
     var tagName = document.createElement("div");
     tagName.innerHTML = record.fields.Name;
     document.body.append(tagName);
-    console.log("Tag name:", tagName);
+    console.log("Show tag name", tagName);
     tagName.classList.add("caption");
 
     tagName.addEventListener("mouseover", () => {
@@ -33,35 +33,55 @@ base('Tags').find(id, function(err, record) {
     let tagType =  document.createElement("div");
     tagType.innerHTML = record.fields.type[0];
     document.body.append(tagType);
-    console.log("Tag category:", tagType);
+    console.log("Show tag category", tagType);
     tagType.classList.add("category");
+
+    // var filterbyType = record.fields.type[0];
+    // filterbyType.forEach(function(color) {
+    //   tagType.classList.add(color)
+    // })
+
+    tagType.addEventListener("click", () => {
+      if (tagType.innertext.contains("colorful")){
+        document.location.href = 'colorful.html';
+      }
+      if (tagType.innerHTML = "black&white"){
+        document.location.href = "blacknwhite.html";
+      }
+      if (tagType.innerHTML = "interesting"){
+        document.location.href = "interesting.html";
+      }
+    })
 
     let tagImage =  document.createElement("div");
     tagImage.style.backgroundImage = `url(${record.fields.image[0].url})`;
     document.body.append(tagImage);
-    console.log("Tag Image:", tagImage);
+    console.log("Show tag image", tagImage);
     tagImage.classList.add("tag-image");
 
     let brandurl = document.createElement("div");
-    brandurl.innerHTML = record.fields.URL;
+    brandurl.innerHTML = "Visit: " + record.fields.URL;
+    console.log("Show Official website:", record.fields.URL);
+    // document.body.append(brandurl);
+    //
+    //   if (brandurl.classList.contains("none")){
+    //     brandurl.classList.add("url-style-white");
+    //   } else {
+    //     // brandurl.innerHTML = "Visit: " + record.fields.URL;
+    //     // document.body.append(brandurl);
+    //     brandurl.classList.add("url-style");
+    //
+    //     brandurl.addEventListener("click", () => {
+    //       document.location.href = record.fields.URL;
+    //     })
+    //   }
+
     document.body.append(brandurl);
-    console.log("Brand website:", brandurl);
     brandurl.classList.add("url-style");
 
     brandurl.addEventListener("click", () => {
       document.location.href = record.fields.URL;
     })
-
-  // let tagName = record.fields.Name;
-  // console.log("Tag name:", tagName);
-  // tagName
-  //
-  // let tagImage = record.fields.image.url;
-  // console.log(tagImage);
-  //
-  // var tagName = document.createElement("div");
-  // tagName.innertext =
-  // document.querySelector(".Name").append(tagName);
 
 });
 

@@ -101,6 +101,13 @@ body{
   color: blue;
 }
 
+.url-style-white {
+  position: absolute;
+  top: 720px;
+  left: 70px;
+  color: transparent;
+}
+
 .url-style:hover {
   position: absolute;
   top: 720px;
@@ -122,9 +129,127 @@ button{
   width: 226px;
   height: 38px;
   left: 1166px;
-  top: 706px;
+  top: 708px;
   background: #FFFFFF;
   border-radius: 32px;
   font-weight: 600;
   letter-spacing: 1px;
+}
+
+button:hover {
+  background: green;
+  color: white;
+  box-shadow: 0px 12px 17px 3px rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 375px){
+  .home{
+    position: absolute;
+    width: 27px;
+    height: 34px;
+    left: 13px;
+    top: 13px;
+    border: 5px solid #DD4747;
+  }
+  .home:hover{
+    border: 5px solid #757575;
+  }
+  .category {
+    position: absolute;
+    width: 195px;
+    height: 30px;
+    left: 90px;
+    top: 455px;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+  }
+  .tag-image{
+    position: absolute;
+    width: 281px;
+    height: 230px;
+    left: 47px;
+    top: 151px;
+    box-shadow: 0px 12px 17px 3px rgba(0, 0, 0, 0.25);
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation-name: image-move;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+  }
+
+  @keyframes image-move {
+    0% {
+      top: 411px;
+    }
+    100% {
+      top: 151px;
+    }
+  }
+  button{
+    position: absolute;
+    width: 178px;
+    height: 35px;
+    left: 99px;
+    top: 638px;
+    background: #FFFFFF;
+    border-radius: 32px;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
+    box-shadow: 0px 12px 17px 3px rgba(0, 0, 0, 0.12);
+  }
+  .caption{
+    position: absolute;
+    text-align: center;
+    width: 237px;
+    height: 100px;
+    left: 69px;
+    top: 527px;
+    color: transparent;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 27px;
+    animation-name: appear;
+    animation-duration: 60s;
+    animation-iteration-count: 1;
+    animation-delay: 3s;
+    transform: rotate(0deg);
+  }
+  @keyframes appear {
+
+    0% {
+
+      top: 417px;
+      color: white;
+    }
+    5% {
+
+      top: 477px;
+      color: black;
+    }
+    100% {
+
+      top: 477px;
+      color: black;
+    }
+  }
+  .url-style {
+    position: absolute;
+    top: 600px;
+    left: 0px;
+    width: 375px;
+    height: 20px;;
+    color: blue;
+    font-size: 10px;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+  .url-style:hover {
+    color: blue;
+    text-decoration: none;
+  }
+
 }
