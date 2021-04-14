@@ -47,45 +47,26 @@ function showTags() {
   const gridcontainer = document.getElementById("grid-container");
   tags.forEach((tag) => {
     const div = document.createElement("div");
-    div.innerText = tag.fields.Name;
+    div.style.backgroundImage = `url(${tag.fields.image[0].url})`;
     div.classList.add("grid-item");
-
-    // var tagColor = tag.fields.color;
-    // tagColor.forEach(function(color) {
-    //   div.classList.add(color)
-    // })
-    //   if (div.classList.contains("blue")) {
-    //     div.style.borderColor = "blue";
-    //   }
-    //   if (div.classList.contains("purple")) {
-    //     div.style.borderColor = "purple";
-    //   }
-    //   if (div.classList.contains("green")) {
-    //     div.style.borderColor = "green";
-    //   }
-    //   if (div.classList.contains("red")) {
-    //     div.style.borderColor = "red";
-    //   }
-    //   if (div.classList.contains("yellow")) {
-    //     div.style.borderColor = "yellow";
-    //   }
-    //   if (div.classList.contains("orange")) {
-    //     div.style.borderColor = "orange";
-    //   }
-    //   if (div.classList.contains("grey")) {
-    //     div.style.borderColor = "grey";
-    //   }
-
-
+    div.innerText = tag.fields.Name;
+    div.style.borderColor = "transparent";
 
     div.addEventListener("mouseover", () => {
-        div.style.backgroundImage = `url(${tag.fields.image[0].url})`;
+      div.style.backgroundImage = ``;
+      div.innerText = tag.fields.Name;
+      div.style.borderColor = "black";
+      div.style.color = "black";
+
     });
     div.addEventListener("mouseout", () => {
-      div.style.backgroundImage = ``;
+      div.style.backgroundImage = `url(${tag.fields.image[0].url})`;
+      div.style.color = "transparent";
+      div.style.borderColor = "transparent";
     });
     div.addEventListener("click", () => {
       document.location.href = 'tag.html?id=' + tag.id;
+
     })
     gridcontainer.appendChild(div);
 

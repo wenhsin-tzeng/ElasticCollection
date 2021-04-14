@@ -47,56 +47,58 @@ function showTags() {
   const gridcontainer = document.getElementById("grid-container");
   tags.forEach((tag) => {
     const div = document.createElement("div");
-    div.innerText = tag.fields.Name;
+    div.style.backgroundImage = `url(${tag.fields.image[0].url})`;
     div.classList.add("grid-item");
-
-    var tagColor = tag.fields.color;
-    tagColor.forEach(function(color) {
-      div.classList.add(color)
-    })
-      if (div.classList.contains("blue")) {
-        div.style.borderColor = "blue";
-        div.style.color = "blue";
-      }
-      if (div.classList.contains("purple")) {
-        div.style.borderColor = "purple";
-        div.style.color = "purple";
-      }
-      if (div.classList.contains("green")) {
-        div.style.borderColor = "green";
-        div.style.color = "green";
-      }
-      if (div.classList.contains("red")) {
-        div.style.borderColor = "red";
-        div.style.color = "red";
-      }
-      if (div.classList.contains("yellow")) {
-        div.style.borderColor = "yellow";
-        div.style.color = "yellow";
-      }
-      if (div.classList.contains("orange")) {
-        div.style.borderColor = "orange";
-        div.style.color = "orange";
-      }
-      if (div.classList.contains("grey")) {
-        div.style.borderColor = "grey";
-        div.style.color = "grey";
-      }
-      if (div.classList.contains("pink")) {
-        div.style.borderColor = "pink";
-        div.style.color = "pink";
-      }
-
-
+    div.innerText = tag.fields.Name;
 
     div.addEventListener("mouseover", () => {
-        div.style.backgroundImage = `url(${tag.fields.image[0].url})`;
+      div.style.backgroundImage = ``;
+      div.innerText = tag.fields.Name;
+      var tagColor = tag.fields.color;
+      tagColor.forEach(function(color) {
+        div.classList.add(color)
+      })
+        if (div.classList.contains("blue")) {
+          div.style.borderColor = "blue";
+          div.style.color = "blue";
+        }
+        if (div.classList.contains("purple")) {
+          div.style.borderColor = "purple";
+          div.style.color = "purple";
+        }
+        if (div.classList.contains("green")) {
+          div.style.borderColor = "green";
+          div.style.color = "green";
+        }
+        if (div.classList.contains("red")) {
+          div.style.borderColor = "red";
+          div.style.color = "red";
+        }
+        if (div.classList.contains("yellow")) {
+          div.style.borderColor = "yellow";
+          div.style.color = "yellow";
+        }
+        if (div.classList.contains("orange")) {
+          div.style.borderColor = "orange";
+          div.style.color = "orange";
+        }
+        if (div.classList.contains("grey")) {
+          div.style.borderColor = "grey";
+          div.style.color = "grey";
+        }
+        if (div.classList.contains("pink")) {
+          div.style.borderColor = "pink";
+          div.style.color = "pink";
+        }
     });
     div.addEventListener("mouseout", () => {
-      div.style.backgroundImage = ``;
+      div.style.backgroundImage = `url(${tag.fields.image[0].url})`;
+      div.style.color = "transparent";
+      div.style.borderColor = "transparent";
     });
     div.addEventListener("click", () => {
       document.location.href = 'tag.html?id=' + tag.id;
+
     })
     gridcontainer.appendChild(div);
 

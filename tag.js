@@ -83,6 +83,13 @@ base('Tags').find(id, function(err, record) {
       document.location.href = record.fields.URL;
     })
 
+    var cursor = document.querySelector(".cursor");
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.pageX + 'px';
+      cursor.style.top = e.pageY + 'px';
+    })
+
+
 });
 
 // function showInfo(){
