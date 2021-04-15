@@ -1,3 +1,7 @@
+html {
+  cursor: none;
+}
+
 body{
   font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 30px;
@@ -99,6 +103,16 @@ body{
 #main {
   transition: margin-left .5s; /* If you want a transition effect */
   padding: 20px;
+}
+
+.cursor {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: red;
+  pointer-events: none;
+  mix-blend-mode: difference;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
