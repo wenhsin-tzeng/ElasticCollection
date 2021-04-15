@@ -1,3 +1,7 @@
+html {
+  cursor: none;
+}
+
 body{
   font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 30px;
@@ -126,7 +130,7 @@ p{
 }
 
 .cursor {
-  position: fixed;
+  position: absolute;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -135,11 +139,11 @@ p{
   mix-blend-mode: difference;
 }
 
-/* .grid-item:hover ~ .cursor {
-  transform: scale(2);
-} */
+p.linestyle {
+  margin-top: -35px;
+  font-size: 15px;
+}
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media only screen and (max-width: 400px) {
   body{
     height: 100%;
@@ -203,4 +207,8 @@ p{
   }
   /* .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;} */
+  p.linestyle {
+    margin-top: -10px;
+    font-size: 0px;
+  }
 }

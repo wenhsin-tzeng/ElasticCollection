@@ -92,19 +92,60 @@ base('Tags').find(id, function(err, record) {
 
 });
 
-// function showInfo(){
-//   var tagName = document.createElement("div");
-//   tagName.innertext = record.fields.Name;
-//   tagName.classList.add("Name");
-//   document.body.append(tagName);
-// }
+function myFunction() {
+  // console.log("Random Number:", x);
+  base('Tags').select({}).eachPage(gotPageOfTags, gotAllTags);
+  // var tagNum = url.searchParams.get("Number");
+  // console.log(id);
+}
 
-// function showInfo(){
-//   const tags = [];
-//   tags.forEach(tag) => {
-//     var tagName = document.createElement("div");
-//     tagName.innertext = tag.fields.Name;
-//     document.querySelector("Name").append(tagName);
-//   });
-//   console.log("showInfo()");
-// }
+const tags = [];
+
+function gotPageOfTags(records, fetchNextPage){
+  console.log("gotPageOfTags()");
+  tags.push(...records);
+  fetchNextPage();
+}
+
+function gotAllTags(err){
+  console.log("gotAllTags()");
+
+  if (err){
+  console.log("error loading tags");
+  console.error(err);
+  return;
+  }
+
+  consoleLogTags();
+  try {
+    showTags();
+  } catch(err) {
+    console.error(err);
+  }
+}
+
+function consoleLogTags(){
+  console.log("consoleLogTags()");
+  tags.forEach((tag) => {
+    console.log("Tag:", tag);
+  });
+}
+
+
+function showTags() {
+  console.log("showTags()");
+  tags.forEach((tag) => {
+    // let tagNum = tag.fields.Number;
+    // console.log(tagNum);
+    let x = Math.floor((Math.random() * 100) + 1);
+    console.log(x);
+    // if (x = tag.fields.Number){
+    //   var tagCaption = url.searchParams.get("Name");
+    //
+    //   // base('Tags').find(tagNum, function(err, record) {
+    //   //   if (err) { console.error(err); return; }
+    //   console.log(tagCaption);
+    //   // });
+    // }
+  })
+}
