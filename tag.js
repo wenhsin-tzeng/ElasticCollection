@@ -36,11 +36,6 @@ base('Tags').find(id, function(err, record) {
     console.log("Show tag category", tagType);
     tagType.classList.add("category");
 
-    // var filterbyType = record.fields.type[0];
-    // filterbyType.forEach(function(color) {
-    //   tagType.classList.add(color)
-    // })
-
     tagType.addEventListener("click", () => {
       if (tagType.innertext.contains("colorful")){
         document.location.href = 'colorful.html';
@@ -62,6 +57,10 @@ base('Tags').find(id, function(err, record) {
     let brandurl = document.createElement("div");
     brandurl.innerHTML = "Visit: " + record.fields.URL;
     console.log("Show Official website:", record.fields.URL);
+    //Goal:
+    //I don't want records that has "none" for their "record.fields.URL" to be shown
+    //However, the code below doesn't work
+    //----------
     // document.body.append(brandurl);
     //
     //   if (brandurl.classList.contains("none")){
@@ -75,7 +74,7 @@ base('Tags').find(id, function(err, record) {
     //       document.location.href = record.fields.URL;
     //     })
     //   }
-
+    //----------
     document.body.append(brandurl);
     brandurl.classList.add("url-style");
 
@@ -88,9 +87,15 @@ base('Tags').find(id, function(err, record) {
       cursor.style.left = e.pageX + 'px';
       cursor.style.top = e.pageY + 'px';
     })
-
-
 });
+
+//This entire section below is me trying to use Math.random() to pull up a random record from airtable
+//my thought process:
+//1: Get a random number from 1-100 with Math.random()
+//2: Pull up the specific record with the same number through "record.fields.Number"
+//3. Change info that is shown on the website into the info of the random record that is generated
+//--------however, the code below is not working
+
 
 function myFunction() {
   // console.log("Random Number:", x);
@@ -130,7 +135,6 @@ function consoleLogTags(){
     console.log("Tag:", tag);
   });
 }
-
 
 function showTags() {
   console.log("showTags()");
