@@ -138,18 +138,8 @@ function consoleLogTags(){
 
 function showTags() {
   console.log("showTags()");
-  tags.forEach((tag) => {
-    // let tagNum = tag.fields.Number;
-    // console.log(tagNum);
-    let x = Math.floor((Math.random() * 100) + 1);
-    console.log(x);
-    // if (x = tag.fields.Number){
-    //   var tagCaption = url.searchParams.get("Name");
-    //
-    //   // base('Tags').find(tagNum, function(err, record) {
-    //   //   if (err) { console.error(err); return; }
-    //   console.log(tagCaption);
-    //   // });
-    // }
-  })
+  let x = Math.floor((Math.random() * 100) + 1);
+  console.log(x);
+  console.log(tags[x].id);
+  document.location.href = 'tag.html?id=' + tags[x].id;
 }
